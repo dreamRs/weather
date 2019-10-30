@@ -11,6 +11,21 @@ weather_dependencies <- function() {
 }
 
 
+#' @title Use Weather Icons
+#'
+#' @description Explicitly load weathr icons dependencies.
+#'
+#' @export
+#' @importFrom htmltools tags attachDependencies
+#'
+use_weather_icons <- function() {
+  attachDependencies(
+    x = tags$div(),
+    value = weather_dependencies()
+  )
+}
+
+
 #' Weather Icons
 #'
 #' @param name Name of the icon.
@@ -23,7 +38,7 @@ weather_dependencies <- function() {
 #' @importFrom htmltools attachDependencies tags browsable validateCssUnit
 #'
 #' @example examples/weather_icon.R
-weather_icon <- function(name, size = "40px", color = "#000", ...) {
+weather_icon <- function(name, size = "15px", color = "#000", ...) {
   wi <- attachDependencies(
     x = tags$i(
       class = paste0("wi wi-", name),
@@ -54,7 +69,7 @@ view_all_icons <- function() {
       FUN = function(x) {
         tags$div(
           style = "display:inline-block; margin:5px;width:90px;height:100px;text-align:center;",
-          weather_icon(x),
+          weather_icon(x, size = "40px"),
           tags$br(),
           x
         )
