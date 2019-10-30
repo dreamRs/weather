@@ -10,13 +10,25 @@ weather_dependencies <- function() {
   )
 }
 
+
+#' Weather Icons
+#'
+#' @param name Name of the icon.
+#' @param size Size (in pixels).
+#' @param color Color of the icon.
+#' @param ... Named attributes to be applied to the tag.
+#'
+#' @return an HTMl tag
 #' @export
-#' @importFrom htmltools attachDependencies tags browsable
-weather_icon <- function(name, size = "40px", ...) {
+#' @importFrom htmltools attachDependencies tags browsable validateCssUnit
+#'
+#' @example examples/weather_icon.R
+weather_icon <- function(name, size = "40px", color = "#000", ...) {
   wi <- attachDependencies(
     x = tags$i(
       class = paste0("wi wi-", name),
       style = sprintf("font-size:%s;", validateCssUnit(size)),
+      style = sprintf("color:%s;", color),
       ...
     ),
     value = weather_dependencies()

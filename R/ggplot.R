@@ -5,6 +5,10 @@ weatherGrob <- function(x, y, weather, size = 1, alpha = 1, colour = "black"){
   gTree(x = x, y = y, weather = weather, size = size, colour = colour, cl = "weather_icon")
 }
 
+#' Custom grid Grob
+#'
+#' @inheritParams grid::makeContent
+#'
 #' @importFrom grid unit setChildren gList gpar
 #' @importFrom grImport2 pictureGrob
 #' @export
@@ -59,8 +63,17 @@ GeomWeather <- ggproto(
   }
 )
 
+
+#' @title Geom Weather Icons
+#'
+#' @description Display weather icon in \code{ggplot2}.
+#'
+#' @inheritParams ggplot2::geom_point
+#'
 #' @export
 #' @importFrom ggplot2 layer
+#'
+#' @example examples/geom_weather.R
 geom_weather <- function(mapping = NULL, data = NULL, stat = "identity",
                          position = "identity", na.rm = FALSE, show.legend = NA,
                          inherit.aes = TRUE, ...) {
