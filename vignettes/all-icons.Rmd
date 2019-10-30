@@ -1,0 +1,24 @@
+---
+title: "All icons"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{All icons}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+`r weather::weather_icon("lightning", "20px")` All weather icons available (see official website : https://erikflowers.github.io/weather-icons/) :
+
+
+```{r}
+library(weather)
+view_all_icons()
+```

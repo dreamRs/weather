@@ -11,3 +11,15 @@
 #' @docType data
 #' @keywords data
 NULL
+
+
+
+#' Weather Icon Names
+#'
+#' @format A \code{character} \code{vector}.
+#'
+#' @name weather_icon_names
+#' @docType data
+#' @keywords data
+NULL
+

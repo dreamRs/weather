@@ -38,3 +38,38 @@ weather_icon <- function(name, size = "40px", color = "#000", ...) {
 }
 
 
+
+#' View all available icons
+#'
+#' @export
+#' @importFrom htmltools browsable tag
+#'
+#' @examples
+#' view_all_icons()
+view_all_icons <- function() {
+  browsable(tags$div(
+    style = "margin: auto; padding: inherit;",
+    lapply(
+      X = weather::weather_icon_names,
+      FUN = function(x) {
+        tags$div(
+          style = "display:inline-block; margin:5px;width:90px;height:100px;text-align:center;",
+          weather_icon(x),
+          tags$br(),
+          x
+        )
+      }
+    )
+  ))
+}
+
+
+
+
+
+
+
+
+
+
+
