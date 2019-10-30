@@ -13,5 +13,7 @@ Depends: R (>= 2.10)
 Imports: 
     grid,
     grImport2,
-    ggplot2
+    ggplot2,
+    htmltools,
+    shiny
 RoxygenNote: 6.1.1
