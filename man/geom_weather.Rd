@@ -57,6 +57,10 @@ to the paired geom/stat.}
 \description{
 Display weather icon in \code{ggplot2}.
 }
+\note{
+Use aesthetic \code{weather} to use an icon, values must
+ be an icon available in \code{\link{weather_icon_names}}.
+}
 \examples{
 library(ggplot2)
 library(weather)

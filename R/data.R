@@ -14,11 +14,27 @@ NULL
 
 
 
-#' Weather Icon Names
+#' Weather Icon Names (for ggplot2)
 #'
 #' @format A \code{character} \code{vector}.
 #'
 #' @name weather_icon_names
+#' @docType data
+#' @keywords data
+NULL
+
+
+
+#' Weather Icon Table (shiny & markdown)
+#'
+#' @format A \code{data.frame} with 283 rows and 3 variables:
+#' \describe{
+#'   \item{icon}{Full name of icon}
+#'   \item{unicode}{Unicode representing the icon}
+#'   \item{name}{Short name of icon}
+#' }
+#'
+#' @name weather_icon_df
 #' @docType data
 #' @keywords data
 NULL

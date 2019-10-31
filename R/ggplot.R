@@ -70,6 +70,9 @@ GeomWeather <- ggproto(
 #'
 #' @inheritParams ggplot2::geom_point
 #'
+#' @note Use aesthetic \code{weather} to use an icon, values must
+#'  be an icon available in \code{\link{weather_icon_names}}.
+#'
 #' @export
 #' @importFrom ggplot2 layer
 #'

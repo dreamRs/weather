@@ -3,9 +3,9 @@
 \docType{data}
 \name{weather_icon_names}
 \alias{weather_icon_names}
-\title{Weather Icon Names}
+\title{Weather Icon Names (for ggplot2)}
 \format{A \code{character} \code{vector}.}
 \description{
-Weather Icon Names
+Weather Icon Names (for ggplot2)
 }
 \keyword{data}
