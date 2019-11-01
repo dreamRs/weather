@@ -2,6 +2,7 @@
 
 export(geom_weather)
 export(makeContent.weather_icon)
+export(match_api)
 export(use_weather_icons)
 export(view_all_icons)
 export(weather_dependencies)

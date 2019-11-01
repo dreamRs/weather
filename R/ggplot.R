@@ -40,18 +40,24 @@ GeomWeather <- ggproto(
   "GeomWeather", Geom,
   required_aes = c("x", "y", "weather"),
   default_aes = aes(size = 10, weather = "day-sunny", colour = "black"),
-  non_missing_aes = c("colour"),
+  non_missing_aes = c("colour", "api"),
+  setup_data = function(data, params) {
+    data$weather <- as.character(data$weather)
+    if (!is.null(params$api)) {
+      data$weather <- match_api(data$weather, api = params$api)
+    }
+    data
+  },
   draw_key = function(data, params, size) {
     weatherGrob(
       x = 0.5,
       y = 0.5,
-      weather = as.character(data$weather),
+      weather = data$weather,
       size = data$size,
       colour = data$colour
     )
   },
-
-  draw_group = function(data, panel_scales, coord) {
+  draw_group = function(data, panel_scales, coord, api = NULL) {
     coords <- coord$transform(data, panel_scales)
     weatherGrob(
       x = coords$x,
@@ -69,6 +75,7 @@ GeomWeather <- ggproto(
 #' @description Display weather icon in \code{ggplot2}.
 #'
 #' @inheritParams ggplot2::geom_point
+#' @param api Name of the API to match icons.
 #'
 #' @note Use aesthetic \code{weather} to use an icon, values must
 #'  be an icon available in \code{\link{weather_icon_names}}.
@@ -77,13 +84,13 @@ GeomWeather <- ggproto(
 #' @importFrom ggplot2 layer
 #'
 #' @example examples/geom_weather.R
-geom_weather <- function(mapping = NULL, data = NULL, stat = "identity",
+geom_weather <- function(mapping = NULL, data = NULL, api = NULL, stat = "identity",
                          position = "identity", na.rm = FALSE, show.legend = NA,
                          inherit.aes = TRUE, ...) {
   layer(
     geom = GeomWeather, mapping = mapping,  data = data, stat = stat,
     position = position, show.legend = show.legend, inherit.aes = inherit.aes,
-    params = list(na.rm = na.rm, ...)
+    params = list(na.rm = na.rm, api = api, ...)
   )
 }
 

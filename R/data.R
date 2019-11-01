@@ -14,7 +14,7 @@ NULL
 
 
 
-#' Weather Icon Names (for ggplot2)
+#' Weather Icon Names (ggplot2)
 #'
 #' @format A \code{character} \code{vector}.
 #'
@@ -38,4 +38,19 @@ NULL
 #' @docType data
 #' @keywords data
 NULL
+
+
+#' Weather Icon API matches
+#'
+#' @format A \code{data.frame} with 343 rows and 2 variables:
+#' \describe{
+#'   \item{api}{API icons names}
+#'   \item{icon}{Name of the matching icon}
+#' }
+#'
+#' @name api_icons
+#' @docType data
+#' @keywords data
+NULL
+
 
