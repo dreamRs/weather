@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 30 30" style="enable-background:new 0 0 30 30;" xml:space="preserve">
-<path d="M3.74,14.44c0,2.04,0.5,3.93,1.51,5.65s2.37,3.1,4.1,4.1s3.61,1.51,5.65,1.51c-2.01-2.74-3.02-6.5-3.02-11.26
-	c0-3.98,1.01-7.73,3.02-11.25c-2.04,0-3.93,0.5-5.65,1.51s-3.1,2.37-4.1,4.09S3.74,12.4,3.74,14.44z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30pt" height="30pt" viewBox="0 0 30 30" version="1.1">
+<g id="surface471">
+<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,0%,0%);fill-opacity:1;" d="M 3.738281 14.441406 C 3.738281 16.480469 4.238281 18.371094 5.25 20.089844 C 6.261719 21.808594 7.621094 23.191406 9.351563 24.191406 C 11.078125 25.191406 12.960938 25.699219 15 25.699219 C 12.988281 22.960938 11.980469 19.199219 11.980469 14.441406 C 11.980469 10.460938 12.988281 6.710938 15 3.191406 C 12.960938 3.191406 11.070313 3.691406 9.351563 4.699219 C 7.628906 5.710938 6.25 7.070313 5.25 8.789063 C 4.25 10.511719 3.738281 12.398438 3.738281 14.441406 Z M 3.738281 14.441406 "/>
+</g>
 </svg>
