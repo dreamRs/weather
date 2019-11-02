@@ -1,8 +1,13 @@
 
 
 #' @importFrom grid gTree
-weatherGrob <- function(x, y, weather, size = 1, alpha = 1, colour = "black"){
-  gTree(x = x, y = y, weather = weather, size = size, colour = colour, cl = "weather_icon")
+weatherGrob <- function(x, y, weather, size = 1, alpha = 1, colour = "black", hjust = 0, vjust = 0){
+  gTree(
+    x = x, y = y, weather = weather,
+    size = size, colour = colour,
+    hjust = hjust, vjust = vjust,
+    cl = "weather_icon"
+  )
 }
 
 #' Custom grid Grob
@@ -28,6 +33,7 @@ makeContent.weather_icon <- function(x) {
         x = x$x[i], y = x$y[i],
         width = x$size[i] * unit(1, "mm"),
         height = x$size[i] * unit(1, "mm"),
+        hjust = x$hjust[i], vjust = x$vjust[i],
         distort = FALSE, ext = "gridSVG"
       )
     }
@@ -39,8 +45,8 @@ makeContent.weather_icon <- function(x) {
 GeomWeather <- ggproto(
   "GeomWeather", Geom,
   required_aes = c("x", "y", "weather"),
-  default_aes = aes(size = 10, weather = "day-sunny", colour = "black"),
-  non_missing_aes = c("colour", "api"),
+  default_aes = aes(size = 10, weather = "day-sunny", colour = "black", hjust = 0, vjust = 0),
+  non_missing_aes = c("colour", "api", "hjust", "vjust"),
   setup_data = function(data, params) {
     data$weather <- as.character(data$weather)
     if (!is.null(params$api)) {
@@ -54,7 +60,9 @@ GeomWeather <- ggproto(
       y = 0.5,
       weather = data$weather,
       size = data$size,
-      colour = data$colour
+      colour = data$colour,
+      hjust = data$hjust,
+      vjust = data$vjust
     )
   },
   draw_group = function(data, panel_scales, coord, api = NULL) {
@@ -64,7 +72,9 @@ GeomWeather <- ggproto(
       y = coords$y,
       weather = as.character(coords$weather),
       size = coords$size,
-      colour = coords$colour
+      colour = coords$colour,
+      hjust = coords$hjust,
+      vjust = coords$vjust
     )
   }
 )
@@ -75,7 +85,7 @@ GeomWeather <- ggproto(
 #' @description Display weather icon in \code{ggplot2}.
 #'
 #' @inheritParams ggplot2::geom_point
-#' @param api Name of the API to match icons.
+#' @param api Name of the API (if any) to match icons.
 #'
 #' @note Use aesthetic \code{weather} to use an icon, values must
 #'  be an icon available in \code{\link{weather_icon_names}}.
@@ -84,7 +94,8 @@ GeomWeather <- ggproto(
 #' @importFrom ggplot2 layer
 #'
 #' @example examples/geom_weather.R
-geom_weather <- function(mapping = NULL, data = NULL, api = NULL, stat = "identity",
+geom_weather <- function(mapping = NULL, data = NULL, api = NULL,
+                         stat = "identity",
                          position = "identity", na.rm = FALSE, show.legend = NA,
                          inherit.aes = TRUE, ...) {
   layer(

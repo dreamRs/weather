@@ -29,7 +29,7 @@ the plot data. The return value must be a \code{data.frame}, and
 will be used as the layer data. A \code{function} can be created
 from a \code{formula} (e.g. \code{~ head(.x, 10)}).}
 
-\item{api}{Name of the API to match icons.}
+\item{api}{Name of the API (if any) to match icons.}
 
 \item{stat}{The statistical transformation to use on the data for this
 layer, as a string.}
