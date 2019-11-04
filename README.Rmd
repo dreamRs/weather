@@ -16,9 +16,10 @@ knitr::opts_chunk$set(
 )
 ```
 
-# weather
+# weather <img src="man/figures/meteo-france-2.png" width=450 align="right" />
 
 <!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 <!-- badges: end -->
 
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in ggplot2, markdown and shiny.
@@ -27,7 +28,7 @@ knitr::opts_chunk$set(
 ```{r, echo=FALSE}
 # knitr::include_graphics(path = "man/figures/meteo-france-2.png")
 ```
-![](man/figures/meteo-france-2.png)
+<!-- ![](man/figures/meteo-france-2.png) -->
 
 
 
@@ -132,10 +133,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "Prévisions du", 
+      "PrÃ©visions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("à", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 
