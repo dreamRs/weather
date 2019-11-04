@@ -24,6 +24,13 @@ knitr::opts_chunk$set(
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in ggplot2, markdown and shiny.
 
 
+```{r, echo=FALSE}
+# knitr::include_graphics(path = "man/figures/meteo-france-2.png")
+```
+![](man/figures/meteo-france-2.png)
+
+
+
 ## Installation
 
 You can install the development version from [GitHub](https://github.com/) with:

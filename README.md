@@ -10,6 +10,8 @@
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in
 > ggplot2, markdown and shiny.
 
+![](man/figures/meteo-france-2.png)
+
 ## Installation
 
 You can install the development version from
@@ -103,7 +105,7 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 # Load France polygons
 france <- loadMap(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\Rtmp4iHaa4\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
+#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpK0bhdz\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 18 features and 2 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY
