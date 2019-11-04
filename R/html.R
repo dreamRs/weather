@@ -47,12 +47,12 @@ weather_dependencies <- function() {
 #' @importFrom htmltools attachDependencies tags browsable validateCssUnit
 #'
 #' @example examples/weather_icon.R
-weather_icon <- function(name, size = "15px", color = "#000", ...) {
+weather_icon <- function(name, size = NULL, color = NULL, ...) {
   wi <- attachDependencies(
     x = tags$i(
       class = paste("wi", find_icon(name)),
-      style = sprintf("font-size:%s;", validateCssUnit(size)),
-      style = sprintf("color:%s;", color),
+      style = if (!is.null(size)) sprintf("font-size:%s;", validateCssUnit(size)),
+      style = if (!is.null(color)) sprintf("color:%s;", color),
       ...
     ),
     value = weather_dependencies()

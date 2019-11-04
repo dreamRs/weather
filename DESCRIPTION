@@ -5,7 +5,7 @@ Authors@R: c(
   person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
   person("Fanny", "Meyer", role = "aut"),
   person("Erik", "Flowers", role = c("ctb", "cph"), comment = "weather-icons"))
-Description: What the package does (one paragraph).
+Description: Use 'weather-icons' <https://erikflowers.github.io/weather-icons/> in 'ggplot2', 'rmarkdown' and 'shiny'.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -19,5 +19,8 @@ Imports:
 RoxygenNote: 6.1.1
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    shinydashboard
 VignetteBuilder: knitr
+URL: https://github.com/dreamRs/weather
+BugReports: https://github.com/dreamRs/weather/issues
