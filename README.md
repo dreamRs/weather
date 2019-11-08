@@ -7,6 +7,8 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build
+status](https://travis-ci.org/dreamRs/weather.svg?branch=master)](https://travis-ci.org/dreamRs/weather)
 <!-- badges: end -->
 
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in
@@ -107,7 +109,7 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 # Load France polygons
 france <- loadMap(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpEBfYvO\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
+#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpcXXUyL\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 18 features and 2 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY
@@ -126,10 +128,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "Prévisions du", 
+      "PrÃ©visions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("à", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 
@@ -178,3 +180,9 @@ valueBox(
 ```
 
 ![](man/figures/shinydashboard-example.png)
+
+## Note
+
+`geom_weather` is largely inspired by `ggflags`
+(<https://github.com/ellisp/ggflags> &
+<https://github.com/rensa/ggflags>).

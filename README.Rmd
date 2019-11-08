@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![Travis build status](https://travis-ci.org/dreamRs/weather.svg?branch=master)](https://travis-ci.org/dreamRs/weather)
 <!-- badges: end -->
 
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in ggplot2, markdown and shiny.
@@ -133,10 +134,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "Prévisions du", 
+      "PrÃ©visions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("à", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 
@@ -191,5 +192,9 @@ valueBox(
 ![](man/figures/shinydashboard-example.png)
 
 
+
+## Note
+
+`geom_weather` is largely inspired by `ggflags` (https://github.com/ellisp/ggflags & https://github.com/rensa/ggflags).
 
 
