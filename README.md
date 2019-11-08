@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# weather <img src="man/figures/meteo-france-2.png" width=450 align="right" />
+# weather <img src="man/figures/france-meteo.png" width=450 align="right" />
 
 <!-- badges: start -->
 
@@ -107,7 +107,7 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 # Load France polygons
 france <- loadMap(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpaaFX6h\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
+#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpEBfYvO\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 18 features and 2 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY
@@ -126,10 +126,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "PrÃ©visions du", 
+      "Prévisions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("à", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 

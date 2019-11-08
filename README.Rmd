@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# weather <img src="man/figures/meteo-france-2.png" width=450 align="right" />
+# weather <img src="man/figures/france-meteo.png" width=450 align="right" />
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
@@ -133,10 +133,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "PrÃ©visions du", 
+      "Prévisions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("à", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 
