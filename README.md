@@ -109,7 +109,7 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 # Load France polygons
 france <- loadMap(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpcXXUyL\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
+#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpMp60YX\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 18 features and 2 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY
@@ -128,10 +128,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "PrÃ©visions du", 
+      "Pr\u00e9visions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("\u00e0", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 

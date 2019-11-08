@@ -134,10 +134,10 @@ ggplot(data = france) +
   theme_minimal() + 
   labs(
     title = paste(
-      "PrÃ©visions du", 
+      "Pr\u00e9visions du", 
       format(fr_tomorrow$time[1], format = "%A %d %B")
     ),
-    subtitle = paste("Ã ", format(Sys.time(), format = "%H:%M le %d/%m"))
+    subtitle = paste("\u00e0", format(Sys.time(), format = "%H:%M le %d/%m"))
   )
 ```
 
