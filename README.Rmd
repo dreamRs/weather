@@ -121,7 +121,7 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 
 # Load France polygons
-france <- loadMap(nivsupra = "REG") 
+france <- charger_carte(nivsupra = "REG") 
 france <- sf::st_transform(france, crs = 4326)
 
 ggplot(data = france) + 

@@ -8,6 +8,7 @@ library(rnaturalearth)
 library(ggplot2)
 library(weather)
 library(data.table)
+library(darksky)
 
 
 

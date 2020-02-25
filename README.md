@@ -108,8 +108,8 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 
 # Load France polygons
-france <- loadMap(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpMp60YX\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
+france <- charger_carte(nivsupra = "REG") 
+#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpusC9Ti\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
 #> Simple feature collection with 18 features and 2 fields
 #> geometry type:  MULTIPOLYGON
 #> dimension:      XY

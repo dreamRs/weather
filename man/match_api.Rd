@@ -4,8 +4,10 @@
 \alias{match_api}
 \title{Match API icon to Weather Icon}
 \usage{
-match_api(name, api = c("darksky", "forecast-io", "yahoo", "owm", "wu",
-  "wmo4680"))
+match_api(
+  name,
+  api = c("darksky", "forecast-io", "yahoo", "owm", "wu", "wmo4680")
+)
 }
 \arguments{
 \item{name}{Name of the icon to find.}
