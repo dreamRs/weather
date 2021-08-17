@@ -19,11 +19,11 @@ library(grImport2)
 # Convert to good SVG format ----------------------------------------------
 
 path_source <- "inst/assets/svg/"
-path_dest <- "inst/assets/svg2/"
+path_dest <- "inst/assets/svg/"
 
-for (i in list.files(path = path_source)) {
-  rsvg_svg(svg = file.path(path_source, i), file = file.path(path_dest, i))
-}
+# for (i in list.files(path = path_source)) {
+#   rsvg_svg(svg = file.path(path_source, i), file = file.path(path_dest, i))
+# }
 
 
 

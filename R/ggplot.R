@@ -1,11 +1,15 @@
 
 
 #' @importFrom grid gTree
-weatherGrob <- function(x, y, weather, size = 1, alpha = 1, colour = "black", hjust = 0, vjust = 0){
+weatherGrob <- function(x, y, weather, size = 1, colour = "black", hjust = 0, vjust = 0) {
   gTree(
-    x = x, y = y, weather = weather,
-    size = size, colour = colour,
-    hjust = hjust, vjust = vjust,
+    x = x,
+    y = y,
+    weather = weather,
+    size = size,
+    colour = colour,
+    hjust = hjust,
+    vjust = vjust,
     cl = "weather_icon"
   )
 }
@@ -16,7 +20,7 @@ weatherGrob <- function(x, y, weather, size = 1, alpha = 1, colour = "black", hj
 #'
 #' @importFrom grid unit setChildren gList gpar
 #' @importFrom grImport2 pictureGrob
-#' @export
+#' @exportS3Method grid::makeContent weather_icon
 makeContent.weather_icon <- function(x) {
   weather_icons <- lapply(
     X = seq_along(x$weather),
@@ -30,11 +34,13 @@ makeContent.weather_icon <- function(x) {
             gpar(fill = "black")
           }
         },
-        x = x$x[i], y = x$y[i],
+        x = x$x[i],
+        y = x$y[i],
         width = x$size[i] * unit(1, "mm"),
         height = x$size[i] * unit(1, "mm"),
-        hjust = x$hjust[i], vjust = x$vjust[i],
-        distort = FALSE, ext = "gridSVG"
+        hjust = x$hjust[i],
+        vjust = x$vjust[i],
+        distort = FALSE
       )
     }
   )
@@ -45,8 +51,8 @@ makeContent.weather_icon <- function(x) {
 GeomWeather <- ggproto(
   "GeomWeather", Geom,
   required_aes = c("x", "y", "weather"),
-  default_aes = aes(size = 10, weather = "day-sunny", colour = "black", hjust = 0, vjust = 0),
-  non_missing_aes = c("colour", "api", "hjust", "vjust"),
+  default_aes = aes(size = 10, colour = "black", hjust = 0, vjust = 0),
+  non_missing_aes = c("colour", "hjust", "vjust"),
   setup_data = function(data, params) {
     data$weather <- as.character(data$weather)
     if (!is.null(params$api)) {
@@ -70,7 +76,7 @@ GeomWeather <- ggproto(
     weatherGrob(
       x = coords$x,
       y = coords$y,
-      weather = as.character(coords$weather),
+      weather = coords$weather,
       size = coords$size,
       colour = coords$colour,
       hjust = coords$hjust,
@@ -94,13 +100,23 @@ GeomWeather <- ggproto(
 #' @importFrom ggplot2 layer
 #'
 #' @example examples/geom_weather.R
-geom_weather <- function(mapping = NULL, data = NULL, api = NULL,
+geom_weather <- function(mapping = NULL,
+                         data = NULL,
+                         api = NULL,
                          stat = "identity",
-                         position = "identity", na.rm = FALSE, show.legend = NA,
-                         inherit.aes = TRUE, ...) {
+                         position = "identity",
+                         na.rm = FALSE,
+                         show.legend = NA,
+                         inherit.aes = TRUE,
+                         ...) {
   layer(
-    geom = GeomWeather, mapping = mapping,  data = data, stat = stat,
-    position = position, show.legend = show.legend, inherit.aes = inherit.aes,
+    geom = GeomWeather,
+    mapping = mapping,
+    data = data,
+    stat = stat,
+    position = position,
+    show.legend = show.legend,
+    inherit.aes = inherit.aes,
     params = list(na.rm = na.rm, api = api, ...)
   )
 }

@@ -4,7 +4,9 @@
 \name{weather_icon_names}
 \alias{weather_icon_names}
 \title{Weather Icon Names (ggplot2)}
-\format{A \code{character} \code{vector}.}
+\format{
+A \code{character} \code{vector}.
+}
 \description{
 Weather Icon Names (ggplot2)
 }

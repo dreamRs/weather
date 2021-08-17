@@ -1,6 +1,6 @@
 Package: weather
 Title: Weather Icons
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: c(
   person("Victor", "Perrier", email = "victor.perrier@dreamrs.fr", role = c("aut", "cre")),
   person("Fanny", "Meyer", role = "aut"),
@@ -17,7 +17,7 @@ Imports:
     ggplot2,
     htmltools,
     shiny
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.1
 Suggests: 
     knitr,
     rmarkdown,

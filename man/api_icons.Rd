@@ -4,11 +4,13 @@
 \name{api_icons}
 \alias{api_icons}
 \title{Weather Icon API matches}
-\format{A \code{data.frame} with 343 rows and 2 variables:
+\format{
+A \code{data.frame} with 343 rows and 2 variables:
 \describe{
   \item{api}{API icons names}
   \item{icon}{Name of the matching icon}
-}}
+}
+}
 \description{
 Weather Icon API matches
 }

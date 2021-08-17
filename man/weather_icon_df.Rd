@@ -4,12 +4,14 @@
 \name{weather_icon_df}
 \alias{weather_icon_df}
 \title{Weather Icon Table (shiny & markdown)}
-\format{A \code{data.frame} with 283 rows and 3 variables:
+\format{
+A \code{data.frame} with 283 rows and 3 variables:
 \describe{
   \item{icon}{Full name of icon}
   \item{unicode}{Unicode representing the icon}
   \item{name}{Short name of icon}
-}}
+}
+}
 \description{
 Weather Icon Table (shiny & markdown)
 }
