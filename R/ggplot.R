@@ -51,7 +51,7 @@ makeContent.weather_icon <- function(x) {
 GeomWeather <- ggproto(
   "GeomWeather", Geom,
   required_aes = c("x", "y", "weather"),
-  default_aes = aes(size = 10, colour = "black", hjust = 0, vjust = 0),
+  default_aes = aes(size = 10, weather = "day-sunny", colour = "black", hjust = 0, vjust = 0),
   non_missing_aes = c("colour", "hjust", "vjust"),
   setup_data = function(data, params) {
     data$weather <- as.character(data$weather)
