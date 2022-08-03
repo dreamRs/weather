@@ -4,3 +4,4 @@
 ^examples$
 ^README\.Rmd$
 ^\.travis\.yml$
+^\.github$

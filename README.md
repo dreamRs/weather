@@ -7,8 +7,7 @@
 
 [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
-[![Travis build
-status](https://travis-ci.org/dreamRs/weather.svg?branch=master)](https://travis-ci.org/dreamRs/weather)
+[![R-CMD-check](https://github.com/dreamRs/weather/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/dreamRs/weather/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 > Use [weather-icons](https://erikflowers.github.io/weather-icons/) in
@@ -52,28 +51,6 @@ ggplot(data = df) +
 
 Icons available are listed in `weather_icon_names`.
 
-Match popular weather API with icon names, for example with package
-[`darksky`](https://github.com/hrbrmstr/darksky) :
-
-``` r
-library(darksky)
-library(ggplot2)
-library(weather)
-now <- get_current_forecast(48.8566, 2.3522)
-
-ggplot(now$hourly) + 
-  geom_weather(
-    aes(x = time, y = temperature, weather = icon), 
-    api = "darksky"
-  ) +
-  labs(
-    title = "Forecast for Paris",
-    caption = "Data from darksky.net (via darksky package)"
-  )
-```
-
-<img src="man/figures/README-weather-api-1.png" width="100%" />
-
 Or plot on a map:
 
 ``` r
@@ -109,13 +86,6 @@ fr_tomorrow <- fr_now[as.character(fr_now$time) == Sys.Date() + 1, ]
 
 # Load France polygons
 france <- charger_carte(nivsupra = "REG") 
-#> Reading layer `REG_2019_CARTElette' from data source `C:\Users\perri\AppData\Local\Temp\RtmpusC9Ti\REG_2019_CARTElette.shp' using driver `ESRI Shapefile'
-#> Simple feature collection with 18 features and 2 fields
-#> geometry type:  MULTIPOLYGON
-#> dimension:      XY
-#> bbox:           xmin: 99040 ymin: 5988964 xmax: 1242444 ymax: 7110479
-#> epsg (SRID):    NA
-#> proj4string:    +proj=lcc +lat_1=49 +lat_2=44 +lat_0=46.5 +lon_0=3 +x_0=700000 +y_0=6600000 +ellps=GRS80 +units=m +no_defs
 france <- sf::st_transform(france, crs = 4326)
 
 ggplot(data = france) + 
@@ -135,7 +105,7 @@ ggplot(data = france) +
   )
 ```
 
-<img src="man/figures/README-weather-map-1.png" width="100%" />
+![](man/figures/README-weather-map-1.png)
 
 ## rmarkdown and shiny
 
